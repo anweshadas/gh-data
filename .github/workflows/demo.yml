@@ -25,6 +25,13 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
+      - name: Upload artifacts
+        uses: actions/uploaad-artifacts@v3
+        with:
+          name: dist-files # name of the file to store the artifact/output of the job
+          path: |
+            dist
+            package.json # filepaths of the file to store the artifact/output of the job
   deploy:
     needs: build
     runs-on: ubuntu-latest
