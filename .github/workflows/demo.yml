@@ -42,7 +42,6 @@ jobs:
           name: dist-files #`with` key addes configuration and artifact identifier.
       - name: Output Contents
         run: |
-         ls
-         pwd
+         ls dist
       - name: Deploy
         run: echo "Deploying..."
